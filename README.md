@@ -1,4 +1,5 @@
-# Warframe Companion
+# Warframe Companion [![Sourcery](https://img.shields.io/badge/Sourcery-enabled-brightgreen)](https://sourcery.ai)
+
 This is a custom command line companion app for the game [Warframe](https://www.warframe.com/).
 
 Neither I, nor this app, are affiliated with Warframe or it's developer Digital Extremes. 
