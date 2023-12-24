@@ -14,3 +14,7 @@ class Item(ABC, SingletonBase):
         """
         Expected to return an Enumeration.
         """
+
+    @property
+    def external_name(self) -> str:
+        return self.internal_name.value
