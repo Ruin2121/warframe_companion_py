@@ -4,6 +4,7 @@ from src.items.warframes import WARFRAMES_DICT
 from src.enumerations.warframes import Warframes
 from os import system, name
 from config import LINE_LENGTH
+from copy import deepcopy
 
 
 class MenuContext(Enum):
@@ -47,50 +48,7 @@ class Menu:
         self.menu_context = MenuContext.INVENTORY_WARFRAME_SUBMENU
         self.clear()
         self.title_bar("Warframes")
-        print(  # This is not a good solution, ideally find an automatic method
-            f"""###
-###    {WARFRAMES_DICT[Warframes.ASH].external_name}                     #  {WARFRAMES_DICT[Warframes.IVARA_PRIME].external_name}    #  {WARFRAMES_DICT[Warframes.TITANIA_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.ASH_PRIME].external_name}               #  {WARFRAMES_DICT[Warframes.KHORA].external_name}          #  {WARFRAMES_DICT[Warframes.TRINITY].external_name}
-###    {WARFRAMES_DICT[Warframes.ATLAS].external_name}                   #  {WARFRAMES_DICT[Warframes.KHORA_PRIME].external_name}    #  {WARFRAMES_DICT[Warframes.TRINITY_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.ATLAS_PRIME].external_name}             #  {WARFRAMES_DICT[Warframes.KULLERVO].external_name}       #  {WARFRAMES_DICT[Warframes.VALKYR].external_name}
-###    {WARFRAMES_DICT[Warframes.BANSHEE].external_name}                 #  {WARFRAMES_DICT[Warframes.LAVOS].external_name}          #  {WARFRAMES_DICT[Warframes.VALKYR_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.BANSHEE_PRIME].external_name}           #  {WARFRAMES_DICT[Warframes.LIMBO].external_name}          #  {WARFRAMES_DICT[Warframes.VAUBAN].external_name}
-###    {WARFRAMES_DICT[Warframes.BARUUK].external_name}                  #  {WARFRAMES_DICT[Warframes.LIMBO_PRIME].external_name}    #  {WARFRAMES_DICT[Warframes.VAUBAN_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.BARUUK_PRIME].external_name}            #  {WARFRAMES_DICT[Warframes.LOKI].external_name}           #  {WARFRAMES_DICT[Warframes.VOLT].external_name}
-###    {WARFRAMES_DICT[Warframes.CALIBAN].external_name}                 #  {WARFRAMES_DICT[Warframes.LOKI_PRIME].external_name}     #  {WARFRAMES_DICT[Warframes.VOLT_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.CHROMA].external_name}                  #  {WARFRAMES_DICT[Warframes.MAG].external_name}            #  {WARFRAMES_DICT[Warframes.VORUNA].external_name}
-###    {WARFRAMES_DICT[Warframes.CHROMA_PRIME].external_name}            #  {WARFRAMES_DICT[Warframes.MAG_PRIME].external_name}      #  {WARFRAMES_DICT[Warframes.WISP].external_name}
-###    {WARFRAMES_DICT[Warframes.CITRINE].external_name}                 #  {WARFRAMES_DICT[Warframes.MESA].external_name}           #  {WARFRAMES_DICT[Warframes.WISP_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.DAGATH].external_name}                  #  {WARFRAMES_DICT[Warframes.MESA_PRIME].external_name}     #  {WARFRAMES_DICT[Warframes.WUKONG].external_name}
-###    {WARFRAMES_DICT[Warframes.EMBER].external_name}                   #  {WARFRAMES_DICT[Warframes.MIRAGE].external_name}         #  {WARFRAMES_DICT[Warframes.WUKONG_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.EMBER_PRIME].external_name}             #  {WARFRAMES_DICT[Warframes.MIRAGE_PRIME].external_name}   #  {WARFRAMES_DICT[Warframes.XAKU].external_name}
-###    {WARFRAMES_DICT[Warframes.EQUINOX].external_name}                 #  {WARFRAMES_DICT[Warframes.NEKROS].external_name}         #  {WARFRAMES_DICT[Warframes.YARELI].external_name}
-###    {WARFRAMES_DICT[Warframes.EQUINOX_PRIME].external_name}           #  {WARFRAMES_DICT[Warframes.NEKROS_PRIME].external_name}   #  {WARFRAMES_DICT[Warframes.ZEPHYR].external_name}
-###    {WARFRAMES_DICT[Warframes.EXCALIBUR].external_name}               #  {WARFRAMES_DICT[Warframes.NEZHA].external_name}          #  {WARFRAMES_DICT[Warframes.ZEPHYR_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.EXCALIBUR_PRIME].external_name}         #  {WARFRAMES_DICT[Warframes.NEZHA_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.EXCALIBUR_UMBRA].external_name}         #  {WARFRAMES_DICT[Warframes.NIDUS].external_name}
-###    {WARFRAMES_DICT[Warframes.EXCALIBUR_UMBRA_PRIME].external_name}   #  {WARFRAMES_DICT[Warframes.NIDUS_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.FROST].external_name}                   #  {WARFRAMES_DICT[Warframes.NOVA].external_name}
-###    {WARFRAMES_DICT[Warframes.FROST_PRIME].external_name}             #  {WARFRAMES_DICT[Warframes.NOVA_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.GARA].external_name}                    #  {WARFRAMES_DICT[Warframes.NYX].external_name}
-###    {WARFRAMES_DICT[Warframes.GARA_PRIME].external_name}              #  {WARFRAMES_DICT[Warframes.NYX_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.GARUDA].external_name}                  #  {WARFRAMES_DICT[Warframes.OBERON].external_name}
-###    {WARFRAMES_DICT[Warframes.GARUDA_PRIME].external_name}            #  {WARFRAMES_DICT[Warframes.OBERON_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.GAUSS].external_name}                   #  {WARFRAMES_DICT[Warframes.OCTAVIA].external_name}
-###    {WARFRAMES_DICT[Warframes.GRENDEL].external_name}                 #  {WARFRAMES_DICT[Warframes.OCTAVIA_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.GRENDEL_PRIME].external_name}           #  {WARFRAMES_DICT[Warframes.PROTEA].external_name}
-###    {WARFRAMES_DICT[Warframes.GYRE].external_name}                    #  {WARFRAMES_DICT[Warframes.QORVEX].external_name}
-###    {WARFRAMES_DICT[Warframes.HARROW].external_name}                  #  {WARFRAMES_DICT[Warframes.REVENANT].external_name}
-###    {WARFRAMES_DICT[Warframes.HARROW_PRIME].external_name}            #  {WARFRAMES_DICT[Warframes.REVENANT_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.HILDRYN].external_name}                 #  {WARFRAMES_DICT[Warframes.RHINO].external_name}
-###    {WARFRAMES_DICT[Warframes.HILDRYN_PRIME].external_name}           #  {WARFRAMES_DICT[Warframes.RHINO_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.HYDROID].external_name}                 #  {WARFRAMES_DICT[Warframes.SARYN].external_name}
-###    {WARFRAMES_DICT[Warframes.HYDROID_PRIME].external_name}           #  {WARFRAMES_DICT[Warframes.SARYN_PRIME].external_name}
-###    {WARFRAMES_DICT[Warframes.INAROS].external_name}                  #  {WARFRAMES_DICT[Warframes.SEVAGOTH].external_name}
-###    {WARFRAMES_DICT[Warframes.INAROS_PRIME].external_name}            #  {WARFRAMES_DICT[Warframes.STYANAX].external_name}
-###    {WARFRAMES_DICT[Warframes.IVARA].external_name}                   #  {WARFRAMES_DICT[Warframes.TITANIA].external_name}
-"""
-        )
+        self.inventory_submenu_generator(WARFRAMES_DICT)
         self.user_input()
 
     def user_input(self):
@@ -141,13 +99,66 @@ class Menu:
     def divider(length=LINE_LENGTH):
         print("#" * length)
 
-    @staticmethod
     def divider2(self, length=LINE_LENGTH):
         self.divider(length)
         self.divider(length)
 
-    @staticmethod
     def title_bar(self, text: str):
         self.divider2()
         pipify(text)
         self.divider2()
+
+    def inventory_submenu_generator(self, item_dictionary: dict, columns: int = 4):
+        number_of_items = len(item_dictionary)
+        number_of_rows = (
+            (number_of_items // columns) + 1 if (number_of_items % columns) > 0 else 0
+        )
+        item_dict_copy = deepcopy(item_dictionary)
+
+        left_of_row_to_be_printed = "###    "
+        right_of_row_to_be_printed = "    ###"
+        remaining_characters = (
+            LINE_LENGTH
+            - len(left_of_row_to_be_printed)
+            - len(right_of_row_to_be_printed)
+        )
+        per_column_character_budget = remaining_characters // columns
+        self.spacer()
+        for row in range(number_of_rows):
+            x = 0
+            row_to_be_printed = ""
+            list_of_keys_to_be_deleted = []
+            for key, item in item_dict_copy.items():
+                if x >= 4:
+                    break
+                ext_name = item.external_name
+                per_column_remaining_characters = (
+                    per_column_character_budget - len(ext_name) - 1
+                )
+                row_to_be_printed += ext_name if x == 0 else f"# {ext_name}"
+                row_to_be_printed += " " * (
+                    per_column_remaining_characters + (1 if x == 0 else -1)
+                )
+
+                list_of_keys_to_be_deleted.append(key)
+                x += 1
+
+            if row + 1 == number_of_rows:
+                final_row_remaining = remaining_characters - len(row_to_be_printed)
+                row_to_be_printed += " " * final_row_remaining
+
+            for key in list_of_keys_to_be_deleted:
+                del item_dict_copy[key]
+
+            print(
+                left_of_row_to_be_printed
+                + row_to_be_printed
+                + right_of_row_to_be_printed
+            )
+        self.spacer()
+        self.divider2()
+
+    @staticmethod
+    def spacer():
+        x = LINE_LENGTH - 6
+        print("###" + " " * x + "###")
