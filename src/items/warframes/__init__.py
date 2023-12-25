@@ -1,8 +1,8 @@
-from a import Ash, AshPrime, Atlas, AtlasPrime
-from b import Banshee, BansheePrime, Baruuk, BaruukPrime
-from c import Caliban, Chroma, ChromaPrime, Citrine
-from d import Dagath
-from e import (
+from src.items.warframes.a import Ash, AshPrime, Atlas, AtlasPrime
+from src.items.warframes.b import Banshee, BansheePrime, Baruuk, BaruukPrime
+from src.items.warframes.c import Caliban, Chroma, ChromaPrime, Citrine
+from src.items.warframes.d import Dagath
+from src.items.warframes.e import (
     Ember,
     EmberPrime,
     Equinox,
@@ -12,17 +12,33 @@ from e import (
     ExcaliburUmbra,
     ExcaliburUmbraPrime,
 )
-from f import Frost, FrostPrime
-from g import Gara, GaraPrime, Garuda, GarudaPrime, Gauss, Grendel, GrendelPrime, Gyre
-from h import Harrow, HarrowPrime, Hildryn, HildrynPrime, Hydroid, HydroidPrime
-from i import Inaros, InarosPrime, Ivara, IvaraPrime
+from src.items.warframes.f import Frost, FrostPrime
+from src.items.warframes.g import (
+    Gara,
+    GaraPrime,
+    Garuda,
+    GarudaPrime,
+    Gauss,
+    Grendel,
+    GrendelPrime,
+    Gyre,
+)
+from src.items.warframes.h import (
+    Harrow,
+    HarrowPrime,
+    Hildryn,
+    HildrynPrime,
+    Hydroid,
+    HydroidPrime,
+)
+from src.items.warframes.i import Inaros, InarosPrime, Ivara, IvaraPrime
 
-# from j import ...
+# from src.items.warframes.j import ...
 
-from k import Khora, KhoraPrime, Kullervo
-from l import Lavos, Limbo, LimboPrime, Loki, LokiPrime
-from m import Mag, MagPrime, Mesa, MesaPrime, Mirage, MiragePrime
-from n import (
+from src.items.warframes.k import Khora, KhoraPrime, Kullervo
+from src.items.warframes.l import Lavos, Limbo, LimboPrime, Loki, LokiPrime
+from src.items.warframes.m import Mag, MagPrime, Mesa, MesaPrime, Mirage, MiragePrime
+from src.items.warframes.n import (
     Nekros,
     NekrosPrime,
     Nezha,
@@ -34,20 +50,130 @@ from n import (
     Nyx,
     NyxPrime,
 )
-from o import Oberon, OberonPrime, Octavia, OctaviaPrime
-from p import Protea
-from q import Qorvex
-from r import Revenant, RevenantPrime, Rhino, RhinoPrime
-from s import Saryn, SarynPrime, Sevagoth, Styanax
-from t import Titania, TitaniaPrime, Trinity, TrinityPrime
+from src.items.warframes.o import Oberon, OberonPrime, Octavia, OctaviaPrime
+from src.items.warframes.p import Protea
+from src.items.warframes.q import Qorvex
+from src.items.warframes.r import Revenant, RevenantPrime, Rhino, RhinoPrime
+from src.items.warframes.s import Saryn, SarynPrime, Sevagoth, Styanax
+from src.items.warframes.t import Titania, TitaniaPrime, Trinity, TrinityPrime
 
-# from u import ...
+# from src.items.warframes.u import ...
 
-from v import Valkyr, ValkyrPrime, Vauban, VaubanPrime, Volt, VoltPrime, Voruna
-from w import Wisp, WispPrime, Wukong, WukongPrime
-from x import Xaku
-from y import Yareli
-from z import Zephyr, ZephyrPrime
+from src.items.warframes.v import (
+    Valkyr,
+    ValkyrPrime,
+    Vauban,
+    VaubanPrime,
+    Volt,
+    VoltPrime,
+    Voruna,
+)
+from src.items.warframes.w import Wisp, WispPrime, Wukong, WukongPrime
+from src.items.warframes.x import Xaku
+from src.items.warframes.y import Yareli
+from src.items.warframes.z import Zephyr, ZephyrPrime
+from src.enumerations.warframes import Warframes
+
+WARFRAMES_DICT = {
+    Warframes.ASH: Ash(),
+    Warframes.ASH_PRIME: AshPrime(),
+    Warframes.ATLAS: Atlas(),
+    Warframes.ATLAS_PRIME: AtlasPrime(),
+    Warframes.BANSHEE: Banshee(),
+    Warframes.BANSHEE_PRIME: BansheePrime(),
+    Warframes.BARUUK: Baruuk(),
+    Warframes.BARUUK_PRIME: BaruukPrime(),
+    Warframes.CALIBAN: Caliban(),
+    Warframes.CHROMA: Chroma(),
+    Warframes.CHROMA_PRIME: ChromaPrime(),
+    Warframes.CITRINE: Citrine(),
+    Warframes.DAGATH: Dagath(),
+    Warframes.EMBER: Ember(),
+    Warframes.EMBER_PRIME: EmberPrime(),
+    Warframes.EQUINOX: Equinox(),
+    Warframes.EQUINOX_PRIME: EquinoxPrime(),
+    Warframes.EXCALIBUR: Excalibur(),
+    Warframes.EXCALIBUR_PRIME: ExcaliburPrime(),
+    Warframes.EXCALIBUR_UMBRA: ExcaliburUmbra(),
+    Warframes.EXCALIBUR_UMBRA_PRIME: ExcaliburUmbraPrime(),
+    Warframes.FROST: Frost(),
+    Warframes.FROST_PRIME: FrostPrime(),
+    Warframes.GARA: Gara(),
+    Warframes.GARA_PRIME: GaraPrime(),
+    Warframes.GARUDA: Garuda(),
+    Warframes.GARUDA_PRIME: GarudaPrime(),
+    Warframes.GAUSS: Gauss(),
+    Warframes.GRENDEL: Grendel(),
+    Warframes.GRENDEL_PRIME: GrendelPrime(),
+    Warframes.GYRE: Gyre(),
+    Warframes.HARROW: Harrow(),
+    Warframes.HARROW_PRIME: HarrowPrime(),
+    Warframes.HILDRYN: Hildryn(),
+    Warframes.HILDRYN_PRIME: HildrynPrime(),
+    Warframes.HYDROID: Hydroid(),
+    Warframes.HYDROID_PRIME: HydroidPrime(),
+    Warframes.INAROS: Inaros(),
+    Warframes.INAROS_PRIME: InarosPrime(),
+    Warframes.IVARA: Ivara(),
+    Warframes.IVARA_PRIME: IvaraPrime(),
+    Warframes.KHORA: Khora(),
+    Warframes.KHORA_PRIME: KhoraPrime(),
+    Warframes.KULLERVO: Kullervo(),
+    Warframes.LAVOS: Lavos(),
+    Warframes.LIMBO: Limbo(),
+    Warframes.LIMBO_PRIME: LimboPrime(),
+    Warframes.LOKI: Loki(),
+    Warframes.LOKI_PRIME: LokiPrime(),
+    Warframes.MAG: Mag(),
+    Warframes.MAG_PRIME: MagPrime(),
+    Warframes.MESA: Mesa(),
+    Warframes.MESA_PRIME: MesaPrime(),
+    Warframes.MIRAGE: Mirage(),
+    Warframes.MIRAGE_PRIME: MiragePrime(),
+    Warframes.NEKROS: Nekros(),
+    Warframes.NEKROS_PRIME: NekrosPrime(),
+    Warframes.NEZHA: Nezha(),
+    Warframes.NEZHA_PRIME: NezhaPrime(),
+    Warframes.NIDUS: Nidus(),
+    Warframes.NIDUS_PRIME: NidusPrime(),
+    Warframes.NOVA: Nova(),
+    Warframes.NOVA_PRIME: NovaPrime(),
+    Warframes.NYX: Nyx(),
+    Warframes.NYX_PRIME: NyxPrime(),
+    Warframes.OBERON: Oberon(),
+    Warframes.OBERON_PRIME: OberonPrime(),
+    Warframes.OCTAVIA: Octavia(),
+    Warframes.OCTAVIA_PRIME: OctaviaPrime(),
+    Warframes.PROTEA: Protea(),
+    Warframes.QORVEX: Qorvex(),
+    Warframes.REVENANT: Revenant(),
+    Warframes.REVENANT_PRIME: RevenantPrime(),
+    Warframes.RHINO: Rhino(),
+    Warframes.RHINO_PRIME: RhinoPrime(),
+    Warframes.SARYN: Saryn(),
+    Warframes.SARYN_PRIME: SarynPrime(),
+    Warframes.SEVAGOTH: Sevagoth(),
+    Warframes.STYANAX: Styanax(),
+    Warframes.TITANIA: Titania(),
+    Warframes.TITANIA_PRIME: TitaniaPrime(),
+    Warframes.TRINITY: Trinity(),
+    Warframes.TRINITY_PRIME: TrinityPrime(),
+    Warframes.VALKYR: Valkyr(),
+    Warframes.VALKYR_PRIME: ValkyrPrime(),
+    Warframes.VAUBAN: Vauban(),
+    Warframes.VAUBAN_PRIME: VaubanPrime(),
+    Warframes.VOLT: Volt(),
+    Warframes.VOLT_PRIME: VoltPrime(),
+    Warframes.VORUNA: Voruna(),
+    Warframes.WISP: Wisp(),
+    Warframes.WISP_PRIME: WispPrime(),
+    Warframes.WUKONG: Wukong(),
+    Warframes.WUKONG_PRIME: WukongPrime(),
+    Warframes.XAKU: Xaku(),
+    Warframes.YARELI: Yareli(),
+    Warframes.ZEPHYR: Zephyr(),
+    Warframes.ZEPHYR_PRIME: ZephyrPrime(),
+}
 
 __all__ = [
     "Ash",

@@ -1,12 +1,11 @@
-from item import Item
+from abc import ABC
+
+from src.base_classes.item import Item
 from src.meta_data import SUBSUMABLE
 from player_data import SUBSUME_STATUS
 
 
-class Warframe(Item):
-    def __new__(cls, *args, **kwargs):
-        super().__new__(cls, *args, **kwargs)
-
+class Warframe(Item, ABC):
     @property
     def subsumable(self):
         return SUBSUMABLE[self.internal_name]

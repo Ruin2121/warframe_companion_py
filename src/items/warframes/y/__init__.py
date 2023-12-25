@@ -1,3 +1,3 @@
-from yareli_ import Yareli
+from src.items.warframes.y.yareli_ import Yareli
 
 __all__ = ["Yareli"]

@@ -1,13 +1,13 @@
-from nekros_ import Nekros
-from nekros_prime_ import NekrosPrime
-from nezha_ import Nezha
-from nezha_prime_ import NezhaPrime
-from nidus_ import Nidus
-from nidus_prime_ import NidusPrime
-from nova_ import Nova
-from nova_prime_ import NovaPrime
-from nyx_ import Nyx
-from nyx_prime_ import NyxPrime
+from src.items.warframes.n.nekros_ import Nekros
+from src.items.warframes.n.nekros_prime_ import NekrosPrime
+from src.items.warframes.n.nezha_ import Nezha
+from src.items.warframes.n.nezha_prime_ import NezhaPrime
+from src.items.warframes.n.nidus_ import Nidus
+from src.items.warframes.n.nidus_prime_ import NidusPrime
+from src.items.warframes.n.nova_ import Nova
+from src.items.warframes.n.nova_prime_ import NovaPrime
+from src.items.warframes.n.nyx_ import Nyx
+from src.items.warframes.n.nyx_prime_ import NyxPrime
 
 __all__ = [
     "Nekros",

@@ -1,11 +1,11 @@
-from gara_ import Gara
-from gara_prime_ import GaraPrime
-from garuda_ import Garuda
-from garuda_prime_ import GarudaPrime
-from gauss_ import Gauss
-from grendel_ import Grendel
-from grendel_prime_ import GrendelPrime
-from gyre_ import Gyre
+from src.items.warframes.g.gara_ import Gara
+from src.items.warframes.g.gara_prime_ import GaraPrime
+from src.items.warframes.g.garuda_ import Garuda
+from src.items.warframes.g.garuda_prime_ import GarudaPrime
+from src.items.warframes.g.gauss_ import Gauss
+from src.items.warframes.g.grendel_ import Grendel
+from src.items.warframes.g.grendel_prime_ import GrendelPrime
+from src.items.warframes.g.gyre_ import Gyre
 
 __all__ = [
     "Gara",

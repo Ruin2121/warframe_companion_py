@@ -1,3 +1,3 @@
-from dagath_ import Dagath
+from src.items.warframes.d.dagath_ import Dagath
 
 __all__ = ["Dagath"]

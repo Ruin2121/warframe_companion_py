@@ -1,3 +1,3 @@
-from protea_ import Protea
+from src.items.warframes.p.protea_ import Protea
 
 __all__ = ["Protea"]
