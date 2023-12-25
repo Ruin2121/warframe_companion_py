@@ -128,7 +128,7 @@ class Menu:
             row_to_be_printed = ""
             list_of_keys_to_be_deleted = []
             for key, item in item_dict_copy.items():
-                if x >= 4:
+                if x >= columns:
                     break
                 ext_name = item.external_name
                 per_column_remaining_characters = (
