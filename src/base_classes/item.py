@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
-from typing import Type
 from enum import Enum
-from src.base_classes.singleton_base import SingletonBase
+
 from player_data.inventory import INVENTORY
 from src.base_classes.recipe import Recipe
+from src.base_classes.singleton_base import SingletonBase
 
 
 class Item(ABC, SingletonBase):

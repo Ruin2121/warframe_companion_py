@@ -1,6 +1,7 @@
-from src.utils.pipe_art.pipe_characters import PIPE_CHARACTERS
-from config import LINE_LENGTH
 from math import floor, ceil
+
+from config import LINE_LENGTH
+from src.utils.pipe_art.pipe_characters import PIPE_CHARACTERS
 
 
 def pipify(text: str):

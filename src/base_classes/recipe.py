@@ -1,17 +1,16 @@
-from src.base_classes.item import Item
-from typing import Type
 from src.base_classes.blueprint import Blueprint
+from src.base_classes.item import Item
 
 
 class Recipe:
     def __init__(
-        self,
-        ingredient_blueprint: Blueprint,
-        ingredient_credits: int,
-        ingredient_1: tuple[Item, int],
-        ingredient_2: tuple[Item, int],
-        ingredient_3: tuple[Item, int],
-        ingredient_4: tuple[Item, int],
+            self,
+            ingredient_blueprint: Blueprint,
+            ingredient_credits: int,
+            ingredient_1: tuple[Item, int],
+            ingredient_2: tuple[Item, int],
+            ingredient_3: tuple[Item, int],
+            ingredient_4: tuple[Item, int],
     ):
         self.ingredient_blueprint = ingredient_blueprint
         self.ingredient_credits = ingredient_credits

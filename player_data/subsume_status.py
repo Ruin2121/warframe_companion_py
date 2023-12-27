@@ -1,6 +1,5 @@
 from src.enumerations.warframes import Warframes
 
-
 SUBSUME_STATUS = {
     Warframes.ASH: False,
     Warframes.ATLAS: False,

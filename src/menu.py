@@ -1,12 +1,13 @@
-from enum import Enum
-from src.utils import pipify
-from src.items.warframes import WARFRAMES_DICT
-from os import system, name
-from config import LINE_LENGTH
 from copy import deepcopy
-from src.enumerations.warframes import Warframes
-from src.base_classes.item import Item
+from enum import Enum
+from os import system, name
 from sys import exit
+
+from config import LINE_LENGTH
+from src.base_classes.item import Item
+from src.enumerations.warframes import Warframes
+from src.items.warframes import WARFRAMES_DICT
+from src.utils import pipify
 
 
 class MenuContext(Enum):
@@ -403,9 +404,9 @@ class Menu:
         left_of_row_to_be_printed = "###    "
         right_of_row_to_be_printed = "    ###"
         remaining_characters = (
-            LINE_LENGTH
-            - len(left_of_row_to_be_printed)
-            - len(right_of_row_to_be_printed)
+                LINE_LENGTH
+                - len(left_of_row_to_be_printed)
+                - len(right_of_row_to_be_printed)
         )
         per_column_character_budget = remaining_characters // columns
         self.spacer()
@@ -418,11 +419,11 @@ class Menu:
                     break
                 ext_name = item.external_name
                 per_column_remaining_characters = (
-                    per_column_character_budget - len(ext_name) - 1
+                        per_column_character_budget - len(ext_name) - 1
                 )
                 row_to_be_printed += ext_name if x == 0 else f"# {ext_name}"
                 row_to_be_printed += " " * (
-                    per_column_remaining_characters + (1 if x == 0 else -1)
+                        per_column_remaining_characters + (1 if x == 0 else -1)
                 )
 
                 list_of_keys_to_be_deleted.append(key)

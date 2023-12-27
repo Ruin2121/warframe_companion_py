@@ -1,7 +1,8 @@
+from enum import Enum
+
 from src.base_classes.blueprint import Blueprint
 from src.base_classes.recipe import Recipe
 from src.enumerations.blueprints import Blueprints
-from enum import Enum
 
 
 class AshBlueprint(Blueprint):

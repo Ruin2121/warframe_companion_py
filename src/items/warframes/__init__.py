@@ -1,3 +1,4 @@
+from src.enumerations.warframes import Warframes
 from src.items.warframes.a import Ash, AshPrime, Atlas, AtlasPrime
 from src.items.warframes.b import Banshee, BansheePrime, Baruuk, BaruukPrime
 from src.items.warframes.c import Caliban, Chroma, ChromaPrime, Citrine
@@ -32,9 +33,6 @@ from src.items.warframes.h import (
     HydroidPrime,
 )
 from src.items.warframes.i import Inaros, InarosPrime, Ivara, IvaraPrime
-
-# from src.items.warframes.j import ...
-
 from src.items.warframes.k import Khora, KhoraPrime, Kullervo
 from src.items.warframes.l import Lavos, Limbo, LimboPrime, Loki, LokiPrime
 from src.items.warframes.m import Mag, MagPrime, Mesa, MesaPrime, Mirage, MiragePrime
@@ -56,9 +54,6 @@ from src.items.warframes.q import Qorvex
 from src.items.warframes.r import Revenant, RevenantPrime, Rhino, RhinoPrime
 from src.items.warframes.s import Saryn, SarynPrime, Sevagoth, Styanax
 from src.items.warframes.t import Titania, TitaniaPrime, Trinity, TrinityPrime
-
-# from src.items.warframes.u import ...
-
 from src.items.warframes.v import (
     Valkyr,
     ValkyrPrime,
@@ -72,7 +67,9 @@ from src.items.warframes.w import Wisp, WispPrime, Wukong, WukongPrime
 from src.items.warframes.x import Xaku
 from src.items.warframes.y import Yareli
 from src.items.warframes.z import Zephyr, ZephyrPrime
-from src.enumerations.warframes import Warframes
+
+# from src.items.warframes.j import ...
+# from src.items.warframes.u import ...
 
 WARFRAMES_DICT = {
     Warframes.ASH: Ash(),

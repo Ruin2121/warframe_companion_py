@@ -1,9 +1,10 @@
+from enum import Enum
+
 from src.base_classes.recipe import Recipe
 from src.base_classes.warframe import Warframe
 from src.enumerations.warframes import Warframes
 from src.items.blueprints import AshBlueprint
 from src.items.warframe_components import AshNeuroptics
-from enum import Enum
 
 
 class Ash(Warframe):
@@ -17,7 +18,7 @@ class Ash(Warframe):
             ingredient_blueprint=AshBlueprint(),
             ingredient_credits=25_000,
             ingredient_1=(AshNeuroptics(), 1),
-            ingredient_2= ,
-            ingredient_3= ,
-            ingredient_4= ,
+            ingredient_2=,
+            ingredient_3=,
+            ingredient_4=,
         )

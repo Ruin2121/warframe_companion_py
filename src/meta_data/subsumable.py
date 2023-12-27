@@ -1,6 +1,5 @@
 from src.enumerations.warframes import Warframes
 
-
 SUBSUMABLE = {
     Warframes.ASH: True,
     Warframes.ASH_PRIME: False,
