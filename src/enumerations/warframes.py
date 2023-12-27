@@ -2,6 +2,30 @@ from enum import Enum
 
 
 class Warframes(Enum):
+    """
+    Enumeration of Warframes in the game.
+
+    Explanation:
+        This enumeration represents the different Warframes available in the game. Each Warframe is represented by a
+        unique value.
+
+    Attributes:
+        ASH (str): The Ash Warframe.
+        ASH_PRIME (str): The Ash Prime Warframe.
+        ATLAS (str): The Atlas Warframe.
+        ATLAS_PRIME (str): The Atlas Prime Warframe.
+        BANSHEE (str): The Banshee Warframe.
+        BANSHEE_PRIME (str): The Banshee Prime Warframe.
+        ...
+        (truncated for brevity)
+        ...
+        WUKONG_PRIME (str): The Wukong Prime Warframe.
+        XAKU (str): The Xaku Warframe.
+        YARELI (str): The Yareli Warframe.
+        ZEPHYR (str): The Zephyr Warframe.
+        ZEPHYR_PRIME (str): The Zephyr Prime Warframe.
+    """
+
     ASH = "Ash"
     ASH_PRIME = "Ash Prime"
 

@@ -7,9 +7,9 @@ from player_data import SUBSUME_STATUS
 
 class Warframe(Item, ABC):
     @property
-    def subsumable(self):
+    def subsumable(self) -> bool:
         return SUBSUMABLE[self.internal_name]
 
     @property
-    def subsume_status(self):
+    def subsume_status(self) -> bool:
         return SUBSUME_STATUS[self.internal_name] if self.subsumable else False
